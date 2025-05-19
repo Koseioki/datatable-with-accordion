@@ -4,29 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data table with accordion</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <h1>Data table with accordion</h1>
+
+  <div class="data-table">
     <dl>
-  <dt>Opsparing i alt</dt>
-  <dd>500.000</dd>
-
-  <dt>Andel i Kundekapital</dt>
-  <dd>90.000</dd>
-
-  <dt>Andel i Profil B</dt>
-  <dd>
-    410.000
-    <details>
-      <summary>Vis detaljer</summary>
-      <dl>
-        <dt>Andel investeret i lav risikofond</dt>
-        <dd>60%</dd>
-        <dt>Andel investeret i høj risikofond</dt>
-        <dd>40%</dd>
-      </dl>
-    </details>
-  </dd>
-</dl>
+      <dt>Opsparing i alt</dt>
+      <dd>500.000</dd>
+  
+      <dt>Andel i Kundekapital</dt>
+      <dd>90.000</dd>
+  
+      <dt>Andel i Profil B</dt>
+      <dd>
+        410.000
+        <span class="toggle-button" onclick="toggleDetails(this)">Vis detaljer</span>
+      </dd>
+  
+      <dt class="details-row">Andel investeret i lav risikofond</dt>
+      <dd class="details-row">60%</dd>
+  
+      <dt class="details-row">Andel investeret i høj risikofond</dt>
+      <dd class="details-row">40%</dd>
+    </dl>
+  </div>
+  
+  <script>
+    function toggleDetails(button) {
+      const isOpen = button.classList.toggle('open');
+      document.querySelectorAll('.details-row').forEach(el => {
+        el.classList.toggle('show', isOpen);
+      });
+      button.textContent = isOpen ? 'Skjul detaljer' : 'Vis detaljer';
+    }
+  </script>
 </body>
 </html>
