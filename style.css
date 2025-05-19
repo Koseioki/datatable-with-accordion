@@ -49,8 +49,9 @@ html,body {
   .toggle-button {
     cursor: pointer;
     color: #007acc;
-    font-size: 0.9em;
     user-select: none;
+    border: none;
+    background: none;
   }
 
   /* .toggle-button::after {

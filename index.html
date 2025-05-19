@@ -18,11 +18,13 @@
       <dt>Andel i Kundekapital</dt>
       <dd>90.000</dd>
   
-      <dt>Andel i Profil B</dt>
-      <dd>
+      <dt onclick="toggleDetails(this.nextElementSibling.querySelector('.toggle-button'))" style="cursor:pointer;">
+        Andel i Profil B
+      </dt>
+      <dd onclick="toggleDetails(this.querySelector('.toggle-button'))" style="cursor:pointer;">
         410.000
-        <button class="toggle-button" aria-expanded="false" onclick="toggleDetails(this)">
-          <span aria-hidden="true">⌄</span><span class="sr-only">Vis detaljer</span>
+        <button class="toggle-button" aria-expanded="false" onclick="event.stopPropagation(); toggleDetails(this)">
+          <span aria-hidden="true">▽</span><span class="sr-only">Vis detaljer</span>
         </button>
       </dd>
   
@@ -41,8 +43,8 @@
         el.classList.toggle('show', isOpen);
       });
       button.innerHTML = isOpen
-        ? '<span aria-hidden="true">˄</span><span class="sr-only">Skjul detaljer</span>'
-        : '<span aria-hidden="true">⌄</span><span class="sr-only">Vis detaljer</span>';
+        ? '<span aria-hidden="true">△</span><span class="sr-only">Skjul detaljer</span>'
+        : '<span aria-hidden="true">▽</span><span class="sr-only">Vis detaljer</span>';
       button.setAttribute('aria-expanded', isOpen);
     }
   </script>
