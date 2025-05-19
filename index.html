@@ -20,7 +20,9 @@
       <dt>Andel i Profil B</dt>
       <dd>
         410.000
-        <span class="toggle-button" onclick="toggleDetails(this)">Vis detaljer</span>
+        <button class="toggle-button" aria-expanded="false" onclick="toggleDetails(this)">
+          <span aria-hidden="true">⌄</span><span class="sr-only">Vis detaljer</span>
+        </button>
       </dd>
   
       <dt class="details-row">Andel investeret i lav risikofond</dt>
@@ -37,7 +39,10 @@
       document.querySelectorAll('.details-row').forEach(el => {
         el.classList.toggle('show', isOpen);
       });
-      button.textContent = isOpen ? 'Skjul detaljer' : 'Vis detaljer';
+      button.innerHTML = isOpen
+        ? '<span aria-hidden="true">˄</span><span class="sr-only">Skjul detaljer</span>'
+        : '<span aria-hidden="true">⌄</span><span class="sr-only">Vis detaljer</span>';
+      button.setAttribute('aria-expanded', isOpen);
     }
   </script>
 </body>
