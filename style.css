@@ -1,7 +1,13 @@
 html,body {
-
     font-family: sans-serif;
     max-width: 40rem;
+    
+  }
+
+  .data-table{
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 0.5rem;
   }
 
   .sr-only{
@@ -25,18 +31,19 @@ html,body {
     margin: 0;
     padding: 8px 12px;
     border-bottom: 1px solid #ccc;
-    background-color: #fff;
+    /* background-color: #fff; */
   }
 
   dt {
     font-weight: bold;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
   }
 
   dd {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    gap: 1rem;
   }
 
   .toggle-button {
@@ -63,7 +70,7 @@ html,body {
   }
 
   .details-row.show {
-    display: block;
+    display: flex;
   }
 
   .details-row dt {
