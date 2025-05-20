@@ -1,13 +1,22 @@
 html,body {
     font-family: sans-serif;
     max-width: 40rem;
+    color: black;
     
   }
 
+  a {
+    text-decoration: none;
+    color: black;
+
+  }
+
   .data-table{
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     padding: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
+    margin : 1rem 0;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   }
 
   .sr-only{
@@ -29,7 +38,7 @@ html,body {
 
   dt, dd {
     margin: 0;
-    padding: 8px 12px;
+    padding: 1rem;
     border-bottom: 1px solid #ccc;
     /* background-color: #fff; */
   }
